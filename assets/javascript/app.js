@@ -1,6 +1,6 @@
 
 // Initial array
-var zoo = ["Cat", "Dog","Rabbit","Bird","Cow","Goat","Horse","Owl","Fish","Pig","Hamster","Squirrel"];
+var topics = ["Cat", "Dog","Rabbit","Bird","Cow","Goat","Horse","Owl","Fish","Pig","Hamster","Squirrel"];
 var animal;
 
 
@@ -10,17 +10,15 @@ function renderButtons() {
   // Deletes buttons prior to adding new buttons to prevent repeat buttons
   $("#animal-buttons").empty();
   // Loops through animal array
-  for (var i = 0; i < zoo.length; i++) {
+  for (var i = 0; i < topics.length; i++) {
     // Creates buttons for each animal in the array.
     var a = $("<button>");
-    // Adding a class
+    // Add a classes & attributes
     a.addClass("btn");
     a.addClass("press")
-    // Adding a data-attribute.
-    a.attr("data-name", zoo[i]);
-    // Adding button's text.
-    a.text(zoo[i]);
-    // Adding the button to the HTML
+    a.attr("data-name", topics[i]);
+    // Add button's text & add button to HTML.
+    a.text(topics[i]);
     $("#animal-buttons").append(a);
   }
 }
@@ -33,13 +31,12 @@ renderButtons();
 // On button click, display animal gif.
 $(document).on("click", ".press", displaygif);
 
-// displaygif -grabs gif info 
+// displaygif grabs gif info 
 function displaygif() {
   $("#images").empty();
   var name = $(this).attr("data-name");
- console.log("display gif!!!")
 
-  // Builds a URL to search Giphy with animal name.
+  // Builds a query to search Giphy with animal gil urls.
   var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
     name + "&api_key=dc6zaTOxFJmzC&limit=10";
 
@@ -53,9 +50,7 @@ function displaygif() {
      var limit = 10;
     
       var datagif = response.data;
-      // console.log(response.data[0].images.fixed_height.url);
-
-      // console.log(response.data[0].images.fixed_height_still.url);
+     
       // Saving the gif urls.
       for (var i =0; i < limit; i++ ){
       var imageUrlStill = response.data[i].images.fixed_height_still.url;
@@ -67,7 +62,7 @@ function displaygif() {
       var imagediv =$("<div>");
       imagediv.addClass("box")
       
-      // Building image tag of gifs.
+      // Building image tag for gifs.
       animalImage.attr("src", imageUrlStill);
       animalImage.attr("data-still", imageUrlStill);
       animalImage.attr("data-animate", imageUrlAnimate);
@@ -90,8 +85,7 @@ function displaygif() {
 $(document).on("click", "img", function () {
   //  alert("ok") 
    var state = $(this).attr("data-state");
-   console.log("*********")
-    console.log("state1: "+state);
+
 //If data-state = still: switch to animated gif & set data-state to animate.
 //Else switch to still gif & and set data-state to still.
 
@@ -105,7 +99,7 @@ $(document).on("click", "img", function () {
         }
   });
 
-// This function handles events where one button is clicked
+// This function gets button in and stores in array & calls renderButtons to make a new button.
 $(".submit").on("click", function (event) {
   // event.preventDefault() prevents the form from trying to submit itself &
   // allows user can hit enter instead of clicking the button if they want
@@ -114,15 +108,14 @@ $(".submit").on("click", function (event) {
 
   // Grab the text from the input box
   animal = $("#animal-name").val().trim();
-  console.log("animal: " + animal);
+
   //No blank buttons!
   if (animal !== "") {
     // Push animal name onto the array
-    zoo.push(animal);
+    topics.push(animal);
 
     // Call function to make buttons from array.
     renderButtons();
-    console.log("animal2"+animal);
   }
   
 });

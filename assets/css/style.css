@@ -25,7 +25,7 @@
     }
     label{
       position: relative;
-      top: 10px;
+      top: 5px;
       left: 5px;
     }
     #animal-add{
@@ -42,5 +42,14 @@
       font-family: Arial, Helvetica, sans-serif;
     
     }
- 
+
+    .jumbotron{
+      background-color:rgba(31, 100, 100, 0.596); 
+      color:white;  
+    }
+
+    .display-4{
+      font-family: 'Caesar Dressing', cursive;
+    }
+    
     
