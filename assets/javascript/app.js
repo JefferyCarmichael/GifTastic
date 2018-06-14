@@ -15,6 +15,7 @@ function renderButtons() {
     var a = $("<button>");
     // Adding a class
     a.addClass("btn");
+    a.addClass("press")
     // Adding a data-attribute.
     a.attr("data-name", zoo[i]);
     // Adding button's text.
@@ -24,38 +25,19 @@ function renderButtons() {
   }
 }
 
-// This function handles events where one button is clicked
-$("#animal-add").on("click", function (event) {
-  // event.preventDefault() prevents the form from trying to submit itself &
-  // allows user can hit enter instead of clicking the button if they want
 
-  event.preventDefault();
-
-  // Grab the text from the input box
-  animal = $("#animal-name").val().trim();
-  console.log("animal: " + animal);
-  //No blank buttons!
-  if (animal !== "") {
-    // Push animal name onto the array
-    zoo.push(animal);
-
-    // Call function to make buttons from array.
-    renderButtons();
-  }
-});
 
 // Show buttons when page loads.
 renderButtons();
 
 // On button click, display animal gif.
-$(document).on("click", ".btn", displaygif);
-
+$(document).on("click", ".press", displaygif);
 
 // displaygif -grabs gif info 
 function displaygif() {
   $("#images").empty();
   var name = $(this).attr("data-name");
-
+ console.log("display gif!!!")
 
   // Builds a URL to search Giphy with animal name.
   var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
@@ -70,9 +52,7 @@ function displaygif() {
     .then(function (response) {
      var limit = 10;
     
-
       var datagif = response.data;
-      console.log(datagif);
       // console.log(response.data[0].images.fixed_height.url);
 
       // console.log(response.data[0].images.fixed_height_still.url);
@@ -92,23 +72,19 @@ function displaygif() {
       animalImage.attr("data-still", imageUrlStill);
       animalImage.attr("data-animate", imageUrlAnimate);
       animalImage.attr("data-state", "still");
-      animalImage.addClass("anGif");
+      animalImage.addClass("img-thumbnail");
+      animalImage.css({"width":"250px","height":"250px"});
+
+
     //Ratings
-      console.log(animal);
-      var ratings =$("<p>").text("Rating: "+rating);
-   
-      
-    
-      // Prepending the images & ratings to the images div
+      var ratings =$("<p>").text("Rating: "+rating); 
+        // Prepending the images & ratings to the images div
       imagediv.append(ratings);
       imagediv.append(animalImage);
       $("#images").prepend(imagediv);
       
       }
-    });
-
-
-  
+    }); 
 }
 
 $(document).on("click", "img", function () {
@@ -129,3 +105,24 @@ $(document).on("click", "img", function () {
         }
   });
 
+// This function handles events where one button is clicked
+$(".submit").on("click", function (event) {
+  // event.preventDefault() prevents the form from trying to submit itself &
+  // allows user can hit enter instead of clicking the button if they want
+
+  event.preventDefault();
+
+  // Grab the text from the input box
+  animal = $("#animal-name").val().trim();
+  console.log("animal: " + animal);
+  //No blank buttons!
+  if (animal !== "") {
+    // Push animal name onto the array
+    zoo.push(animal);
+
+    // Call function to make buttons from array.
+    renderButtons();
+    console.log("animal2"+animal);
+  }
+  
+});
