@@ -9,8 +9,8 @@
       margin: 5px;
     }
     .btn,#animal-add{
-      background-color:teal;
-      color:white;
+      background-color:rgb(148, 218, 218);
+      color:rgb(87, 83, 83);
     
     }
     .btn{
@@ -46,10 +46,18 @@
     .jumbotron{
       background-color:rgba(31, 100, 100, 0.596); 
       color:white;  
+      background-image:url('../images/bird.gif');
+      background-position: 0px -320px;
+      background-repeat: no-repeat;
+      background-size:cover;
     }
 
     .display-4{
       font-family: 'Caesar Dressing', cursive;
+    }
+
+    .lead{
+      color: rgb(87, 83, 83);
     }
     
     
