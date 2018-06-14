@@ -1,0 +1,45 @@
+  
+    button,#btn
+     {
+      margin: 5px;
+    }
+
+    .box{
+      float: left;
+    }
+    .btn,#animal-add{
+      background-color:teal;
+      color:white;
+    
+    }
+    .btn{
+      width: 90px;
+    .#anima
+      
+    }
+    p,label{
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    label{
+      position: relative;
+      top: 10px;
+      left: 5px;
+    }
+    #animal-add{
+      position: relative;
+      top: 5px;
+    }
+    #animal-name{
+      /* width: 300px; */
+      
+    
+    }
+    body{
+      background-color: rgb(245, 245, 245);
+      font-family: Arial, Helvetica, sans-serif;
+    
+    }
+ 
+    
