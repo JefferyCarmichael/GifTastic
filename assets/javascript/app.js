@@ -68,7 +68,7 @@ function displaygif() {
       animalImage.attr("data-animate", imageUrlAnimate);
       animalImage.attr("data-state", "still");
       animalImage.addClass("img-thumbnail");
-      animalImage.css({"width":"250px","height":"250px"});
+      animalImage.css({"width":"220px","height":"220px"});
 
 
     //Ratings
