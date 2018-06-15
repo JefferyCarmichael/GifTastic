@@ -13,9 +13,10 @@ function renderButtons() {
   for (var i = 0; i < topics.length; i++) {
     // Creates buttons for each animal in the array.
     var a = $("<button>");
-    // Add a classes & attributes
+    // Add a classes & attributes 
     a.addClass("btn");
-    a.addClass("press")
+    a.addClass("press");
+    a.attr("type","submit");
     a.attr("data-name", topics[i]);
     // Add button's text & add button to HTML.
     a.text(topics[i]);
@@ -33,7 +34,7 @@ $(document).on("click", ".press", displaygif);
 
 // displaygif grabs gif info 
 function displaygif() {
-  $("#images").empty();
+  // $("#images").empty();
   var name = $(this).attr("data-name");
 
   // Builds a query to search Giphy with animal gil urls.
@@ -113,9 +114,11 @@ $(".submit").on("click", function (event) {
   if (animal !== "") {
     // Push animal name onto the array
     topics.push(animal);
-
+    $("#animal-name").val("  ");
+   
     // Call function to make buttons from array.
     renderButtons();
+    
   }
   
 });
