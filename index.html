@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Caesar+Dressing" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -14,49 +14,56 @@
 
 <body>
 
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">GifTastic</h1>
-      <p class="lead">Click a button and see animal gifs or add your own.</p>
-    </div>
-  </div>
-
-
   <div class="container">
+
+    <div class="jumbotron jumbotron-fluid mt-5">
+      <h1 class="title display-3 ml-4 mt-3">GifTastic</h1>
+      <p class="lead ml-4">Click a button and see animal gifs or add your own.</p>
+    </div>
+
+
     <div class="row">
       <div class="col-md-12">
         <!-- Buttons get placed here -->
         <div id="animal-buttons"></div>
       </div>
+
+      <br>
+
+      <form>
+        <div class="form-row mt-4 ml-4 shadow-sm p-3">
+
+          <div class="col-7">
+            <label for="animal-name">Add an Animal</label>
+            <!--Input Box-->
+            <input type="text" id="animal-name" class="form-control shadow-sm">
+          </div>
+
+          <div class="col mt-3 ">
+            <!-- Button to add animals -->
+            <input id="animal-add" type="submit" value="Submit" class="submit btn btn-primary aria-pressed=" false"">
+          </div>
+
+        </div>
+      </form>
     </div>
+
     <!--row-->
 
-    <div class="row">
-      <div class="col-md-9">
+    <div class="row mt-3">
+      <div class="col-md-12">
         <p> </p>
         <!--Gifs get placed here -->
         <div id="images" class="redraw"></div>
       </div>
-
-      <div class="col-md-3 ">
-        <label for="animal-name">Add an Animal</label>
-        <br>
-        <!--Input Box-->
-        <input type="text" id="animal-name" class="form-control">
-        <br>
-        <!-- Button to add animals -->
-        <input id="animal-add" type="submit" value="Submit" class="submit btn btn-primary" aria-pressed="true">
-      </div> 
-
     </div>
   </div>
-</div>
-</body>
 
-<footer>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="assets/javascript/app.js"></script>
-</footer>
+
+</body>
 
 </html>

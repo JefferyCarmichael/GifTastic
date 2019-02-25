@@ -34,7 +34,7 @@ $(document).on("click", ".press", displaygif);
 
 // displaygif grabs gif info 
 function displaygif() {
-  // $("#images").empty();
+  $("#images").empty();
   var name = $(this).attr("data-name");
 
   // Builds a query to search Giphy with animal gil urls.

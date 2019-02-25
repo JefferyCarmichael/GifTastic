@@ -1,28 +1,52 @@
-  
-    button,#btn
-     {
-      margin: 5px;
+  body{
+      font-family: Arial, Helvetica, sans-serif;
+      text-shadow: 1px 1px 1px #888888;
+  }
+    
+/* Animal add box */
+    button,#btn {
+      margin: 6px;
     }
 
+  .form-row{
+   border: 1px solid rgba(211, 211, 211, 0.363);
+  }
+
+  /* Gif Box*/
     .box{
       float: left;
-      margin: 5px;
-      
+      margin: 6px;
+      box-shadow: 4px 4px 4px #888888;
+      border-radius: 3px;
     }
+
+  /* Input box */
+    #animal-name{
+  border-top: 2px solid#35333393;
+  border-left: 2px solid #46454594;
+    }
+
+   /* Buttons */
     .btn,#animal-add{
       background-color:rgb(148, 218, 218);
       color:rgb(87, 83, 83);
-      box-shadow: 4px 4px 4px #888888;
-      border-color: rgb(148, 218, 218);
-      text-shadow: 0 -1px 0 rgb(155, 153, 153);
-    
+      box-shadow: 5px 5px 15px 1px #00000094;
+      text-shadow: 1px 1px 1px rgba(77, 75, 75, 0.637);
+      font-weight: bold;
+      border: 1px solid rgb(148, 218, 218);
     }
+
     .btn{
       width: 90px;
+    }
+
+    #animal-add{
+      margin-top: 3px;
     }
       
     .btn:hover {
       background-color:rgb(129, 201, 201);
+      border: 1px solid rgb(148, 218, 218);
       color: white;
       text-shadow: 0 -1px 0 #000;
     } 
@@ -60,40 +84,56 @@
       top: 5px;
     }
     
-    body{
-      background-color: rgb(245, 245, 245);
-      font-family: Arial, Helvetica, sans-serif;
-      text-shadow: 1px 1px 1px #888888;
-    }
-
+/* Jumbotron Box */
     .jumbotron{
+      border-radius: 15px;
       background-color:rgba(31, 100, 100, 0.596); 
       color:white;  
       background-image:url('../images/bird.gif');
        background-position: 0px -320px;
       background-repeat: no-repeat;
       background-size:cover;
+      box-shadow: inset 0px 0px 15px 1px #52515163, 9px 9px 15px 1px #00000094;
     }
-
-    .display-4{
+  
+    /* Jumobotron Title */
+    .title{
       font-family: 'Caesar Dressing', cursive;
       text-shadow: 4px 4px 4px #888888;
         
     }
-
+  /* Jumbotron Text */
     .lead{
-      color: rgb(87, 83, 83);
+      background: linear-gradient(to right, rgb(27, 11, 99) 15%, rgb(54, 105, 139) 25%, rgb(161, 126, 50) 50%,  rgb(255, 255, 255) 100%);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;    
+      text-shadow: 1px 1px 3px #4e4e4e;
+      font-weight: bold;
+    }
+    
+@media screen and (max-width: 768px){
+  .img-thumbnail{
+    height: 140px !important;
+    width: 150px !important;
+  }
+  }
+
+@media screen and (max-width: 999px){
+      .jumbotron{
+      background-position: 0px -120px;
+      }
+      .img-thumbnail{
+        height: 160px !important;
+        width: 170px !important;
+      }
     }
 
-    @media screen and (max-width: 940px){
-      .jumbotron{
-      background-position: 0px -220px;
-      }
-
-    @media screen and (max-width: 680px){
+ @media screen and (max-width: 680px){
         .jumbotron{
         background-position: 0px -120px;
         }
+    }
   
 
     
